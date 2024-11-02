@@ -21,7 +21,8 @@ class ResultActivity : AppCompatActivity() {
             Log.d("Image URI", "showImage: $it")
             binding.resultImage.setImageURI(it)
         }
-
+        val detectedText = intent.getStringExtra(EXTRA_RESULT)
+        binding.resultText.text = detectedText
     }
 
     companion object {
