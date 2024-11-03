@@ -32,10 +32,13 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        mlModelBinding = true
     }
 }
 
 dependencies {
+    implementation("org.tensorflow:tensorflow-lite-support:0.1.0")
+    implementation("org.tensorflow:tensorflow-lite-metadata:0.1.0")
     val cameraxVersion = "1.3.0"
 
     implementation("androidx.core:core-ktx:1.12.0")
@@ -49,9 +52,13 @@ dependencies {
     implementation("androidx.camera:camera-camera2:$cameraxVersion")
     implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
     implementation("androidx.camera:camera-view:$cameraxVersion")
-    implementation("com.google.mlkit:text-recognition:16.0.0")
 
+//    ML Kit
+    implementation("com.google.mlkit:text-recognition:16.0.0")
     implementation("com.google.mlkit:translate:17.0.1")
     implementation("com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0")
     implementation("androidx.camera:camera-mlkit-vision:1.4.0-alpha02")
+
+//    Tensor Flow Lite
+    implementation("org.tensorflow:tensorflow-lite-task-vision:0.4.4")
 }
